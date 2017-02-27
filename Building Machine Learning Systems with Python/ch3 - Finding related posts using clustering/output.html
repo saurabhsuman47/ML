@@ -1,0 +1,831 @@
+
+      <body bgcolor="#F7F7FB">
+          <h1 style="color: red; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+             <u>Post 1 => Distance: 0.697720165951
+</u>
+          </h1>
+    
+      <h3 style="color: blue; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Original Post  ( Subject: sci.space )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: dgempey@ucscb.UCSC.EDU (David Gordon Empey)<br />
+Subject: Re: PLANETS STILL: IMAGES ORBIT BY ETHER TWIST<br />
+<br />
+In <1993Apr23.165459.3323@coe.montana.edu> uphrrmk@gemini.oscs.montana.edu (Jack Coyote) writes:<br />
+>In sci.astro, dmcaloon@tuba.calpoly.edu (David McAloon) writes:<br />
+>[ a nearly perfect parody  -- needed more random CAPS]<br />
+<br />
+>Thanks for the chuckle.  (I loved the bit about relevance to people starving<br />
+>in Somalia!)<br />
+>To those who've taken this seriously, READ THE NAME! (aloud)<br />
+Well, I thought it must have been a joke, but I don't get the <br />
+joke in the name. Read it aloud? David MACaloon. David MacALLoon.<br />
+David macalOON. I don't geddit.<br />
+-Dave Empey (speaking for himself)<br />
+>-- <br />
+>Thank you, thank you, I'll be here all week.  Enjoy the buffet! <br />
+<br />
+
+      </p>
+    
+      <h3 style="color: #AA00AA; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Most Similar Post  ( Subject: sci.space , Post Index: 3844 )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: uphrrmk@gemini.oscs.montana.edu (Jack Coyote)<br />
+Subject: Re: PLANETS STILL: IMAGES ORBIT BY ETHER TWIST<br />
+In sci.astro, dmcaloon@tuba.calpoly.edu (David McAloon) writes:<br />
+[ a nearly perfect parody  -- needed more random CAPS]<br />
+<br />
+Thanks for the chuckle.  (I loved the bit about relevance to people starving<br />
+in Somalia!)<br />
+To those who've taken this seriously, READ THE NAME! (aloud)<br />
+-- <br />
+Thank you, thank you, I'll be here all week.  Enjoy the buffet! <br />
+<br />
+
+      </p></body>
+    
+      <body bgcolor="#F7F7FB">
+          <h1 style="color: red; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+             <u>Post 2 => Distance: 0.813106878421
+</u>
+          </h1>
+    
+      <h3 style="color: blue; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Original Post  ( Subject: comp.windows.x )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: pmartz@dsd.es.com (Paul Martz)<br />
+Subject: Re: 24-bit Static color: will clients like it?<br />
+In article <1993Apr26.123918.1@vxcrna.cern.ch>, roeber@vxcrna.cern.ch (Frederick Roeber) writes:<br />
+> I'm writing an X server for some video-generation equipment.  The<br />
+> hardware is "truecolor" in YUV space; in X terms it has a 24-bit<br />
+> static color visual.  I would really like to have the server just<br />
+> present this static visual, but I'm not sure if this will be <br />
+> acceptable to "most" X clients.  The three problems I see are:<br />
+> <br />
+>   1) The colormap, though huge, is static.<br />
+>   2) All pixels would be 3 bytes wide.<br />
+>   3) Because the hardware actually lives in YUV space, the<br />
+>      translation RGB->YUV will introduce some rounding error.<br />
+We tried to ship an X server once that only supported a 24bit<br />
+TrueColor visual. The main problems we encountered were:<br />
+	1) Clients written with logic like the following:<br />
+	    if (DefaultDepth() != 1)<br />
+		/* Assume default depth is 8bit */<br />
+	   These clients need an 8bit deep visual in the root window<br />
+	   to run correctly.<br />
+	2) Other clients didn't even bother to do that much, and just<br />
+	   outright assumed they had a *dynamic* visual class, with a<br />
+	   dynamic colormap. XStoreColors doesn't work on cmaps<br />
+	   associated with Static or TrueColor visual classes, but<br />
+	   many clients don't bother to check, they just start<br />
+	   throwing XStoreColor calls at you.<br />
+Though both are clearly client error, this is the case with so many<br />
+clients that it's easier for you to expose 8bit PseudoColor as a<br />
+default root window visual, than it ever would be for all these client<br />
+writers to change their clients to do the right thing.<br />
+--<br />
+   -paul	pmartz@dsd.es.com<br />
+		Evans & Sutherland<br />
+
+      </p>
+    
+      <h3 style="color: #AA00AA; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Most Similar Post  ( Subject: comp.windows.x , Post Index: 1317 )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: roeber@vxcrna.cern.ch (Frederick Roeber)<br />
+Subject: 24-bit Static color: will clients like it?<br />
+I'm writing an X server for some video-generation equipment.  The<br />
+hardware is "truecolor" in YUV space; in X terms it has a 24-bit<br />
+static color visual.  I would really like to have the server just<br />
+present this static visual, but I'm not sure if this will be <br />
+acceptable to "most" X clients.  The three problems I see are:<br />
+  1) The colormap, though huge, is static.<br />
+  2) All pixels would be 3 bytes wide.<br />
+  3) Because the hardware actually lives in YUV space, the<br />
+     translation RGB->YUV will introduce some rounding error.<br />
+Being more of a server guy than a client guy, I ask: will these<br />
+limitations thwart many X clients?  Or will most of the X stuff<br />
+floating around blithely accept what they're given?  I could write<br />
+the server to also present a pseudocolor visual of, e.g., 8 bits, <br />
+but I'd rather avoid this if not necessary.<br />
+I know there are no absolutes, but I'd appreciate hearing people's<br />
+opinions and suggestions.  Thanks!<br />
+-- <br />
+Frederick G. M. Roeber | CERN -- European Center for Nuclear Research<br />
+e-mail: roeber@cern.ch or roeber@caltech.edu | work: +41 22 767 31 80<br />
+r-mail: CERN/PPE, 1211 Geneva 23, Switzerland | home: +33 50 20 82 99<br />
+
+      </p></body>
+    
+      <body bgcolor="#F7F7FB">
+          <h1 style="color: red; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+             <u>Post 3 => Distance: 0.942764547561
+</u>
+          </h1>
+    
+      <h3 style="color: blue; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Original Post  ( Subject: comp.sys.ibm.pc.hardware )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: les@chinet.chi.il.us (Leslie Mikesell)<br />
+Subject: Re: *** CONSUMER WARNING ***  MidWest Micro (Ohio)<br />
+In article <C5usq4.Mpr@wybbs.mi.org> ken@wybbs.mi.org  writes:<br />
+>I'm not sure the modem would work ok in a basic system, but it clearly does<br />
+>not work in a multi port system like mine. Since my time is worth more <br />
+>than the aggravation or the cost of the modem, I gave it to a local<br />
+>charitable organization (with a description of my problem) and ordered<br />
+>a Practical Peripherals 14.4MT from PC Connection.<br />
+>For $30 more, I have a solid external modem built by a company I know <br />
+>will support their users and sold by a company (based on personal<br />
+>experience) will treat me right if there is a problem. I should have<br />
+>known better...<br />
+But, but, but... How does buying an external modem solve the problem<br />
+of wanting more than 2 serial devices at once?  And since the PC<br />
+only supports two, why are you blaming a modem vendor for the<br />
+problem?  I don't see how your experience could have been different<br />
+with any internal modem. <br />
+Les Mikesell<br />
+  les@chinet.chi.il.us<br />
+
+      </p>
+    
+      <h3 style="color: #AA00AA; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Most Similar Post  ( Subject: comp.sys.ibm.pc.hardware , Post Index: 1846 )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: ken@wybbs.mi.org <br />
+Subject: *** CONSUMER WARNING ***  MidWest Micro (Ohio)<br />
+Thinking of buying from MidWest Micro of Ohio? Think *very* carefully.<br />
+Unless you are absolutely sure you won't have any problems, you may want<br />
+to trade elsewhere.<br />
+Despite the fact that they answer the phone, "Hi! I'm <whoever> and we're<br />
+having a GREAT Day!", they weren't quite so happy when I wanted to return<br />
+a modem that didn't work as I expected it to.<br />
+The details:<br />
+I ordered one of their house brand "Infotel" 14.4/DF internal FAX modems.<br />
+In reality, it was a Twincom Lightning FAX that had a paper sticker over<br />
+the name. Given the poor reports on the net about this modem, I would not<br />
+have ordered it, had I known this in advance.<br />
+It arrived on time. The documentation stated that it would work (and was<br />
+preconfigured) as COM4, providing that COM2 was not in use at the same time.<br />
+For several reasons, I have a serial card configured for COM1/COM2. At the<br />
+time I installed the modem, nothing was connected to COM2.<br />
+Although the modem appeared to work, during every connection at 9600 or<br />
+14.4, it would randomly break the connection and hang up the phone. After<br />
+spending some time on the phone with MidWest's tech support, they suggested<br />
+disabling the COM2 port.<br />
+This appeared to solve the disconnect problem, but was an unacceptable long<br />
+term solution. I had to have COM1 and 2 available, even though they both<br />
+would not be in use at the same time as the modem.<br />
+I called back 20 minutes prior to their closing and waited in Voicemail <br />
+hell, listening to repeated advertisements for MidWest Micro products. I <br />
+was then promptly disconnected. Apparently it was quiting time and they <br />
+didn't want to be bothered with callers that had been waiting on the line.<br />
+I called the next day and asked the Customer Diservice agent for an RMA<br />
+number. She promptly switched me to a "Tech Support" rep that implied that<br />
+it was my equipment at fault and that he wasn't going to give me an RMA<br />
+number. He suggested I use some nonstandard IRQ settings, a solution I<br />
+was not happy with. The modem should work as originally configured.<br />
+Conclusion:<br />
+I'm not sure the modem would work ok in a basic system, but it clearly does<br />
+not work in a multi port system like mine. Since my time is worth more <br />
+than the aggravation or the cost of the modem, I gave it to a local<br />
+charitable organization (with a description of my problem) and ordered<br />
+a Practical Peripherals 14.4MT from PC Connection.<br />
+For $30 more, I have a solid external modem built by a company I know <br />
+will support their users and sold by a company (based on personal<br />
+experience) will treat me right if there is a problem. I should have<br />
+known better...<br />
+
+      </p></body>
+    
+      <body bgcolor="#F7F7FB">
+          <h1 style="color: red; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+             <u>Post 4 => Distance: 0.531244919408
+</u>
+          </h1>
+    
+      <h3 style="color: blue; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Original Post  ( Subject: sci.space )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: hathaway@stsci.edu<br />
+Subject: Re: Vandalizing the sky.<br />
+>Newsgroups: sci.astro,sci.space<br />
+>Subject: Re: Vandalizing the sky.<br />
+><br />
+ (excerpts from posting on this topic) <br />
+>In article <C5t05K.DB6@research.canon.oz.au> enzo@research.canon.oz.au <br />
+>(Enzo Liguori) writes:<br />
+><br />
+>>Now, Space Marketing<br />
+>>is working with University of Colorado and Livermore engineers on<br />
+>>a plan to place a mile-long inflatable billboard in low-earth<br />
+>>orbit.  <br />
+>... <br />
+>>... the real purpose of the project is to help the environment! <br />
+>>The platform will carry ozone monitors <br />
+><br />
+>... <br />
+>I can't believe that a mile-long billboard would have any significant<br />
+>effect on the overall sky brightness.  Venus is visible during the day,<br />
+>but nobody complains about that.  Besides, it's in LEO, so it would only<br />
+>be visible during twilight when the sky is already bright, and even if<br />
+>it would have some miniscule impact, it would be only for a short time<br />
+>as it goes zipping across the sky.<br />
+><br />
+(I've seen satellites at midnight - they're not only in twilight.) :o) <br />
+>...<br />
+><br />
+>From the book "Prodigal Genius: The Life of Nikola Tesla" by John J. O'Neill:<br />
+><br />
+>"This remarkable conductivity of gases, including the air, at low<br />
+>pressures, led Tesla to suggest, in a published statement in 1914, a<br />
+>system of lighting on a terrestrial scale in which he proposed to treat<br />
+>the whole Earth, with its surrounding atmosphere, as if it were a<br />
+>single lamp....  <br />
+>The whole Earth would be transformed into a giant lamp, with the night <br />
+>sky completely illuminated.  ... making the night as bright as day."<br />
+> <br />
+Now my comments: <br />
+I'd like to add that some of the "protests" do not come from a strictly <br />
+practical consideration of what pollution levels are acceptable for <br />
+research activities by professional astronomers.  Some of what I <br />
+would complain about is rooted in aesthetics.  Many readers may <br />
+never have known a time where the heavens were pristine - sacred - <br />
+unsullied by the actions of humans.  The space between the stars <br />
+as profoundly black as an abyss can be.  With full horizons and <br />
+a pure sky one could look out upon half of all creation at a time <br />
+- none of which had any connection with the petty matters of man. <br />
+Any lights were supplied solely by nature; uncorruptable by men.  <br />
+Whole religions were based on mortal man somehow getting up there <br />
+and becoming immortal as the stars, whether by apotheosis or a belief <br />
+in an afterlife.  <br />
+The Space Age changed all that.  The effect of the first Sputniks <br />
+and Echo, etc. on this view could only happen once.  To see a light <br />
+crossing the night sky and know it was put there by us puny people <br />
+is still impressive and the sense of size one gets by assimilating <br />
+the scales involved is also awesome - even if the few hundreds or <br />
+thousands of miles involved is still dwarfed by the rest of the universe.  <br />
+But there is still a hunger for the pure beauty of a virgin sky. <br />
+Yes, I know aircraft are almost always in sight.  I have to live <br />
+in a very populated area (6 miles from an international airport <br />
+currently) where light pollution on the ground is ghastly.  The <br />
+impact of humans is so extreme here - virtually no place exists <br />
+that has not been shaped, sculpted, modified, trashed or whipped <br />
+into shape by the hands of man.  In some places the only life <br />
+forms larger than bacteria are humans, cockroaches, and squirrels <br />
+(or rats).  I visited some friends up in the Appalacian mountains <br />
+one weekend, "getting away from it all" (paved roads, indoor plumbing, <br />
+malls, ...) and it felt good for a while - then I quickly noticed <br />
+the hollow was directly under the main flight path into Dulles - 60-80 <br />
+miles to the east.  (Their 'security light' didn't help matters <br />
+much either.)  But I've heard the artic wilderness gets lots of <br />
+high air traffic.  So I know the skies are rarely perfect. <br />
+But there is still this desire to see a place that man hasn't <br />
+fouled in some way.  (I mean they've been TRYING this forever - <br />
+like, concerning Tesla's idea to banish night, - wow!)  I don't watch <br />
+commercial television, but I can imagine just how disgusting beer, <br />
+truck, or hemmorrhoid ointment advertisements would be if seen up so high.  <br />
+If ya' gotta make a buck on it (displaying products in heaven), at <br />
+least consider the reactions from those for whom the sky is a last<br />
+beautiful refuge from the baseness of modern life.  <br />
+To be open about this though, I have here my listing of the passage <br />
+of HST in the evening sky for this weekend - tonight Friday at <br />
+8:25 p.m. EDT it will reach an altitude of 20.1 degrees on the <br />
+local meridian from Baltimore vicinity.  I'll be trying to see it <br />
+if I can - it _is_ my mealticket after all.  So I suppose I could <br />
+be called an elitist for supporting this intrusion on the night sky <br />
+while complaining about billboards proposed by others.  Be that <br />
+as it may, I think my point about a desire for beauty is valid, <br />
+even if it can't ever be perfectly achieved. <br />
+Regards, <br />
+Wm. Hathaway <br />
+Baltimore MD <br />
+
+      </p>
+    
+      <h3 style="color: #AA00AA; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Most Similar Post  ( Subject: sci.space , Post Index: 1752 )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: hathaway@stsci.edu<br />
+Subject: Re: Vandalizing the sky.<br />
+>Newsgroups: sci.astro,sci.space<br />
+>Subject: Re: Vandalizing the sky.<br />
+><br />
+My apologies if this is a re-post - I submitted it on Friday, but <br />
+got a message that my post might not have gone out.  Considering <br />
+the confusing spitting contest over 'rights', (there are TOO <br />
+inalienable rights damn it!  The majority can be just as destructive <br />
+of liberty as a despot), I suspect that my post did not get out <br />
+of my site.    (I ain't saying that dark skies are included in these <br />
+rights, although we can only preserve any rights by exercising them.) <br />
+<br />
+Anyway, here are my thoughts on this: <br />
+<br />
+I'd like to add that some of the "protests" do not come from a strictly <br />
+practical consideration of what pollution levels are acceptable for <br />
+research activities by professional astronomers.  Some of what I <br />
+would complain about is rooted in aesthetics.  Many readers may <br />
+never have known a time where the heavens were pristine - sacred - <br />
+unsullied by the actions of humans.  The space between the stars <br />
+as profoundly black as an abyss can be.  With full horizons and <br />
+a pure sky one could look out upon half of all creation at a time <br />
+- none of which had any connection with the petty matters of man. <br />
+Any lights were supplied solely by nature; uncorruptable by men.  <br />
+Whole religions were based on mortal man somehow getting up there <br />
+and becoming immortal as the stars, whether by apotheosis or a belief <br />
+in an afterlife.  <br />
+The Space Age changed all that.  The effect of the first Sputniks <br />
+and Echo, etc. on this view could only happen once.  To see a light <br />
+crossing the night sky and know it was put there by us puny people <br />
+is still impressive and the sense of size one gets by assimilating <br />
+the scales involved is also awesome - even if the few hundreds or <br />
+thousands of miles involved is still dwarfed by the rest of the universe.  <br />
+But there is still a hunger for the pure beauty of a virgin sky. <br />
+Yes, I know aircraft are almost always in sight.  I have to live <br />
+in a very populated area (6 miles from an international airport <br />
+currently) where light pollution on the ground is ghastly.  The <br />
+impact of humans is so extreme here - virtually no place exists <br />
+that has not been shaped, sculpted, modified, trashed or whipped <br />
+into shape by the hands of man.  In some places the only life <br />
+forms larger than bacteria are humans, cockroaches, and squirrels <br />
+(or rats).  I visited some friends up in the Appalacian mountains <br />
+one weekend, "getting away from it all" (paved roads, indoor plumbing, <br />
+malls, ...) and it felt good for a while - then I quickly noticed <br />
+the hollow was directly under the main flight path into Dulles - 60-80 <br />
+miles to the east.  (Their 'security light' didn't help matters <br />
+much either.)  But I've heard the artic wilderness gets lots of <br />
+high air traffic.  So I know the skies are rarely perfect. <br />
+But there is still this desire to see a place that man hasn't <br />
+fouled in some way.  (I mean they've been TRYING this forever - <br />
+like, concerning Tesla's idea to banish night, - wow!)  I don't watch <br />
+commercial television, but I can imagine just how disgusting beer, <br />
+truck, or hemmorrhoid ointment advertisements would be if seen up so high.  <br />
+If ya' gotta make a buck on it (displaying products in heaven), at <br />
+least consider the reactions from those for whom the sky is a last<br />
+beautiful refuge from the baseness of modern life.  <br />
+To be open about this though, I have here my listing of the passage <br />
+of HST in the evening sky for this weekend - tonight Friday at <br />
+8:25 p.m. EDT it will reach an altitude of 20.1 degrees on the <br />
+local meridian from Baltimore vicinity.  I'll be trying to see it <br />
+if I can - it _is_ my mealticket after all.  So I suppose I could <br />
+be called an elitist for supporting this intrusion on the night sky <br />
+while complaining about billboards proposed by others.  Be that <br />
+as it may, I think my point about a desire for beauty is valid, <br />
+even if it can't ever be perfectly achieved. <br />
+Regards, <br />
+Wm. Hathaway <br />
+Baltimore MD <br />
+<br />
+(P.S. added Tuesday - this again is not a rights/vs./reality tome, <br />
+just a warning that someone into destroying beauty had better know <br />
+that other people may not accept it without a complaint.)  <br />
+
+      </p></body>
+    
+      <body bgcolor="#F7F7FB">
+          <h1 style="color: red; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+             <u>Post 5 => Distance: 0.799904316948
+</u>
+          </h1>
+    
+      <h3 style="color: blue; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Original Post  ( Subject: comp.sys.mac.hardware )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: ferch@ucs.ubc.ca (Les Ferch)<br />
+Subject: Re: Where to get power cord to plug Non-Apple monitor into Quadra power supply?<br />
+In <1r7t6fINNq4c@senator-bedfellow.MIT.EDU> thewho@athena.mit.edu (Derek A Fong) writes:<br />
+>Is there an extension cord type cable I can buy which allows me to plug<br />
+>my existing power cord into and then plug this "extension cable" into my<br />
+>Quadra? <br />
+There are two approaches:<br />
+1. If your power cord is the kind that detaches from the back of the<br />
+monitor (most common) you can get a *replacement* power cord that will go<br />
+from the monitor to the back of the computer.<br />
+2. You can get an adpater that connects to the plug end of the existing<br />
+power cord and provides the proper end that plugs into the back of the<br />
+computer.<br />
+Both cost about the same (aprox. $5) and are available from many computer<br />
+stores (clone dealers are usually better at having these things and at<br />
+good prices). Power cords are standard, so you don't have to go looking<br />
+for some special thing at a Mac store.<br />
+
+      </p>
+    
+      <h3 style="color: #AA00AA; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Most Similar Post  ( Subject: comp.sys.mac.hardware , Post Index: 3877 )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: thewho@athena.mit.edu (Derek A Fong)<br />
+Subject: Where to get power cord to plug Non-Apple monitor into Quadra power supply?<br />
+I have a Sony 1304s whch I would like to hook up so that I get its <br />
+power though my Quadra 800's power supply. ie, if I had an apple monitor,<br />
+I could plug the monitor directly into the computer so that when I hit<br />
+the power button the keyboard, both the monitor and computer go on, and<br />
+when I shut down, both go off.  Is there an extension cord type cable<br />
+I can buy which allows me to plug my existing power cord into and then plug<br />
+this "extension cable" into my Quadra?<br />
+Any thoughts and comments would be appreciated,<br />
+Thanks in advance,<br />
+Derek<br />
+******************************************************************************<br />
+  DEREK FONG                           *   EMAIL: thewho@plume.mit.edu<br />
+  Dept. of Physical Oceanography       *          thewho@darla.whoi.edu<br />
+------------------------------------------------------------------------------<br />
+Bldg 54-1511A                          * Clark Laboratory 317<br />
+Massachusetts Institute of Technology  * Woods Hole Oceanographic Institution<br />
+Cambridge, MA 02139                    * Woods Hole, MA 02543<br />
+(617) 253-2922                         * (508) 457-2000 x2814<br />
+*******************************************************************************<br />
+
+      </p></body>
+    
+      <body bgcolor="#F7F7FB">
+          <h1 style="color: red; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+             <u>Post 6 => Distance: 0.96937374462
+</u>
+          </h1>
+    
+      <h3 style="color: blue; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Original Post  ( Subject: comp.graphics )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: val@fcom.cc.utah.edu (Val Kartchner)<br />
+Subject: Re: Where did the hacker ethic go?<br />
+VINCI (filipe@vxcrna.cern.ch) wrote:<br />
+: In article <1993May12.193454.29823@hal.com>, bobp@hal.com (Bob Pendleton) writes...<br />
+: >From article <1993May7.235404.22590@pony.Ingres.COM>, by mwmeyer@Ingres.COM (Mike (wading through the muck and) Meyer):<br />
+: >> In article <1993May7.165432.16935@hal.com> bobp@hal.com (Bob Pendleton) writes:<br />
+: >>    This is getting pretty silly. First off, "Hacker" is an obsolete term.<br />
+: >>    Doesn't matter what it used to mean, today it means "thief."<br />
+: >> <br />
+: >> It only means "thief" if you want it to mean that.  To me, it means<br />
+:   [Lots of context wickedly omitted by myself :-) ]<br />
+: > <br />
+: >Anyway, if I say "Joe is a hacker" to most english speaking people who<br />
+: >know the word they'll probably think he is either a poor golfer or a<br />
+: >bad carpenter. But there are very very few people who will think he is<br />
+: >a good and clever programmer. :-)<br />
+: > <br />
+: >If you chose to call yourself by a term that means "thief" don't be<br />
+: >surprised when people think you are a thief. Even if you don't agree<br />
+: >with that definition of the word.<br />
+:       ^^^  ^^^^^^^^^^ <br />
+:  [....] The narrower view that a hacker, when<br />
+:  associated with the computing environment, is a dishonest<br />
+:  expert is not so widespread, I'm my opinion, at least with the<br />
+:  people involved with the field. IMHO the wider meaning is not<br />
+:  obsolete at all, no matter how much the lay press would like it to<br />
+:  be!  [....]<br />
+:  Therefore I conclude that if you call yourself a hacker, and somebody<br />
+:  perceives you as a thief, then this person belongs to a very very<br />
+:  small group that has some computer knowledge, but not enough to know<br />
+:  the wider (and original) meaning of the word.  [....]<br />
+Unfortunately, the general public has a very narrow view of the deep, dark<br />
+recesses of the art of computing.  What little they do see is from the view<br />
+given to them by the media.  From what I have seen from the media, 'hacker'<br />
+is not a proper way by which to refer to a respected person.<br />
+I, on the other hand, know what 'hacker' means from those who consider<br />
+themselves such.  Following is the definition from "Jargon File 2.9.10".<br />
+(This is also known as the "Hackers Dictionary".)  The definitions are<br />
+arranged in order of decreasing frequency of usage:<br />
+   :hacker: [originally, someone who makes furniture with an axe] n.<br />
+     1. A person who enjoys exploring the details of programmable<br />
+     systems and how to stretch their capabilities, as opposed to most<br />
+     users, who prefer to learn only the minimum necessary.  2. One who<br />
+     programs enthusiastically (even obsessively) or who enjoys<br />
+     programming rather than just theorizing about programming.  3. A<br />
+     person capable of appreciating {hack value}.  4. A person who is<br />
+     good at programming quickly.  5. An expert at a particular program,<br />
+     or one who frequently does work using it or on it; as in 'a UNIX<br />
+     hacker'.  (Definitions 1 through 5 are correlated, and people who<br />
+     fit them congregate.)  6. An expert or enthusiast of any kind.  One<br />
+     might be an astronomy hacker, for example.  7. One who enjoys the<br />
+     intellectual challenge of creatively overcoming or circumventing<br />
+     limitations.  8. [deprecated] A malicious meddler who tries to<br />
+     discover sensitive information by poking around.  Hence 'password<br />
+     hacker', 'network hacker'.  See {cracker}.<br />
+     The term 'hacker' also tends to connote membership in the global<br />
+     community defined by the net (see {network, the} and<br />
+     {Internet address}).  It also implies that the person described<br />
+     is seen to subscribe to some version of the hacker ehic (see<br />
+     {hacker ethic, the}).<br />
+     It is better to be described as a hacker by others than to describe<br />
+     oneself that way.  Hackers consider themselves something of an<br />
+     elite (a meritocracy based on ability), though one to which new<br />
+     members are gladly welcome.  There is thus a certain ego<br />
+     satisfaction to be had in identifying yourself as a hacker (but if<br />
+     you claim to be one and are not, you'll quickly be labeled<br />
+     {bogus}).  See also {wannabee}.<br />
+   :hacker ethic, the: n.  1. The belief that information-sharing<br />
+     is a powerful positive good, and that it is an ethical duty of<br />
+     hackers to share their expertise by writing free software and<br />
+     facilitating access to information and to computing resources<br />
+     wherever possible.  2. The belief that system-cracking for fun<br />
+     and exploration is ethically OK as long as the cracker commits<br />
+     no theft, vandalism, or breach of confidentiality.<br />
+     Both of these normative ethical principles are widely, but by no<br />
+     means universally) accepted among hackers. Most hackers subscribe<br />
+     to the hacker ethic in sense 1, and many act on it by writing and<br />
+     giving away free software.  A few go further and assert that<br />
+     *all* information should be free and *any* proprietary<br />
+     control of it is bad; this is the philosophy behind the {GNU}<br />
+     project.<br />
+     Sense 2 is more controversial: some people consider the act of<br />
+     cracking itself to be unethical, like breaking and entering.<br />
+     But this principle at least moderates the behavior of people who<br />
+     see themselves as `benign' crackers (see also {samurai}).  On<br />
+     this view, it is one of the highest forms of hackerly courtesy<br />
+     to (a) break into a system, and then (b) explain to the sysop,<br />
+     preferably by email from a {superuser} account, exactly how it<br />
+     was done and how the hole can be plugged --- acting as an<br />
+     unpaid (an unsolicited) {tiger team}.<br />
+     The most reliable manifestation of either version of the hacker<br />
+     ethic is that almost all hackers are actively willing to share<br />
+     technical tricks, software, and (where possible) computing<br />
+     resources with other hackers.  Huge cooperative networks such as<br />
+     {USENET}, {Fidonet} and Internet (see {Internet address})<br />
+     can function without central control because of this trait; they<br />
+     both rely on and reinforce a sense of community that may be<br />
+     hackerdom's most valuable intangible asset.<br />
+:  Finally, a true hacker does not name himself/herself one, for this is<br />
+:  a title that is bestowed by the befuddled sysadmins and users at large.<br />
+: To me, a sign of a truly great hacker is to be introduced to someone who<br />
+: says "Nahh, I just know a thing or two, people always exagerate..." :-)<br />
+Note that the above definition does not preclude a hacker from describing<br />
+limself (meaning: himself/herself) one, but simply says that it is better<br />
+not to do so.  There are many who do not know the meaning of 'hacker'.  So,<br />
+in order to defend the true meaning of the word, it is sometimes necessary<br />
+to borrow on the reputation of a known (respected) hacker around the<br />
+workplace.  (This means that 'hacker' is defined in terms of some well-known<br />
+and respected person.)  Sometimes, there may only be one such person.<br />
+: >No matter what Mr. Dumpty says, language doesn't work that way.<br />
+:  Actually it does, you just have to get adequate press coverage... :-)<br />
+Language works anyway that we want it to work.  The purpose of language is<br />
+to communicate.  To oversimplify: As long as communication is taking place,<br />
+then language is working.<br />
+--<br />
+|================= #include <stddisclaimer.h> ================///=============|<br />
+| "AMIGA: The computer for the creative mind" (tm) Commodore /// Weber State  |<br />
+| "Macintosh: The computer for the rest of us"(tm) Apple \\\///   University  |<br />
+|== "I think, therefore I AMiga" -- val@csulx.weber.edu ==\///= Ogden UT USA =|<br />
+
+      </p>
+    
+      <h3 style="color: #AA00AA; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Most Similar Post  ( Subject: comp.graphics , Post Index: 3491 )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: christen@astro.ocis.temple.edu (Carl Christensen)<br />
+Subject: Re: Where did the hacker ethic go?<br />
+I think the main reason is that in the good old hacker days of the young(er)<br />
+Gates' and Jobs' of the world, the computer was not as widespread a<br />
+phenomenom as it is now.  With the increased popularity of the PC<br />
+come a plethora of mundane business uses which required more practical<br />
+minded and narrower-focused programmers.<br />
+Why be a hacker when you can get a good job programming databases or<br />
+programs for accountants?  Basically, the yuppies caught up and<br />
+disciplined the hackers, and molded them in their own image.<br />
+--<br />
+Carl Christensen                /~~\_/~\        ,,,  Dept. of Computer Science<br />
+christen@astro.ocis.temple.edu |  #=#==========#   | Temple University        <br />
+"Curiouser and curiouser!" - LC \__/~\_/        ```  Philadelphia, PA  USA   <br />
+
+      </p></body>
+    
+      <body bgcolor="#F7F7FB">
+          <h1 style="color: red; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+             <u>Post 7 => Distance: 1.15178437805
+</u>
+          </h1>
+    
+      <h3 style="color: blue; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Original Post  ( Subject: comp.sys.mac.hardware )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: folta@zen.holonet.net (Steve Folta)<br />
+Subject: Re: Using SetWUTime() with a PB170<br />
+aep@world.std.com (Andrew E Page) writes:<br />
+>   I can get the mac to go to sleep, but I can't make seem to <br />
+>make it wake up with SetWUTime().<br />
+The PowerBook 170 hardware doesn't have a wakeup timer.  Nor does the 140.<br />
+The Mac Portable had one, and I think the PowerBook 100 had one.  I don't<br />
+know about the newer PowerBooks, but I kind of doubt it.  I got bit by<br />
+this too, and it took my a while rooting around on the developer CD<br />
+before I found this out.<br />
+Steve Folta<br />
+folta@well.sf.ca.us<br />
+
+      </p>
+    
+      <h3 style="color: #AA00AA; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Most Similar Post  ( Subject: comp.sys.mac.hardware , Post Index: 3293 )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: aep@world.std.com (Andrew E Page)<br />
+Subject: Re: SetWUTime Works on a PB 230<br />
+<br />
+   I have tested this on a 230 and it does work there.  So it would<br />
+seem that the 140 and 170 are out though.  One way to tell is to<br />
+go and open the PowerBook control panel(7.1).  There is a setting<br />
+there that allows you to set the time to wake up the Mac.  If it<br />
+is present when you open the control panel, then you can assume that<br />
+SetWUTime will work.  <br />
+-- <br />
+Andrew E. Page   (Warrior Poet) |   Decision and Effort The Archer and Arrow<br />
+Mac Consultant                  |     The difference between what we are<br />
+Macintosh and DSP Technology    |           and what we want to be.<br />
+
+      </p></body>
+    
+      <body bgcolor="#F7F7FB">
+          <h1 style="color: red; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+             <u>Post 8 => Distance: 0.936393790949
+</u>
+          </h1>
+    
+      <h3 style="color: blue; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Original Post  ( Subject: comp.graphics )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: orourke@sophia.smith.edu (Joseph O'Rourke)<br />
+Subject: Re: Delaunay Triangulation<br />
+In article <lsk1v9INN93c@caspian.usc.edu> zyeh@caspian.usc.edu (zhenghao yeh) writes:<br />
+><br />
+>Does anybody know what Delaunay Triangulation is?<br />
+>Is there any reference to it? <br />
+>Is it useful for creating 3-D objects? If yes, what's the advantage?<br />
+There is a vast literature on Delaunay triangulations, literally<br />
+hundreds of papers.  A program is even provided with every copy of <br />
+Mathematica nowadays.  You might look at this if you are interested in <br />
+using it for creating 3D objects:<br />
+@article{Boissonnat5,<br />
+  author = "J.D. Boissonnat",<br />
+  title = "Geometric Structures for Three-Dimensional Shape Representation",<br />
+  journal = "ACM Transactions on Graphics",<br />
+  month = "October",<br />
+  year = {1984},<br />
+  volume = {3},<br />
+  number = {4},<br />
+  pages = {266-286}<br />
+}<br />
+
+      </p>
+    
+      <h3 style="color: #AA00AA; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Most Similar Post  ( Subject: comp.graphics , Post Index: 1634 )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: lewism@aix.rpi.edu (Michael C. Lewis)<br />
+Subject: Re: Delaunay Triangulation<br />
+In article <lsk1v9INN93c@caspian.usc.edu> zyeh@caspian.usc.edu (zhenghao yeh) writes:<br />
+><br />
+>Does anybody know what Delaunay Triangulation is?<br />
+>Is there any reference to it? <br />
+>Is it useful for creating 3-D objects? If yes, what's the advantage?<br />
+It is used to create a TIN (triangulated irregular network), which is<br />
+basically a bunch of triangles which form a surface over a group of<br />
+points.  What is special about it is that the triangles formed are the <br />
+most equalateral possible.  Check out "Proceedings of AutoCarto N" where<br />
+N is 8..10.  Sorry, I don't have a specific reference describing the<br />
+process.<br />
+-Michael<br />
+<br />
+
+      </p></body>
+    
+      <body bgcolor="#F7F7FB">
+          <h1 style="color: red; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+             <u>Post 9 => Distance: 1.34683623571
+</u>
+          </h1>
+    
+      <h3 style="color: blue; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Original Post  ( Subject: sci.space )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: bobc@sed.stel.com (Bob Combs)<br />
+Subject: Re: Gamma Ray Bursters.  WHere  are they.<br />
+Picture our universe floating like a log<br />
+in a river.  As the log floats down the<br />
+river, it occasionally strikes rocks, the<br />
+bank, the bottom, other logs.  When this collission<br />
+occurs, kinetic energy is translated into heat, the<br />
+log degrades, gets scraped up, and other energy <br />
+translaions occur.  The distribution of damage to<br />
+the log depends on the shape of the log.<br />
+However, to a very small virus in a mite on the head of a<br />
+termite in the center of the log, the shock waves from the<br />
+collissions would appear uniformly random in direction.<br />
+This is my theory for GRB.  They are evidence of our universe<br />
+interacting with other universes!  Why not!  Makes<br />
+just as much sense as the GRB coming from the Oort cloud!<br />
+The log theory of universes can't be ruled out!<br />
+Of course, I'm a layman in the physics world.  You <br />
+physicists out there, Tell me about this !!!!<br />
+<br />
+Bob Combs<br />
+Astronautical Engineer,  <br />
+Stanford Telecom<br />
+.<br />
+ <br />
+
+      </p>
+    
+      <h3 style="color: #AA00AA; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Most Similar Post  ( Subject: comp.sys.mac.hardware , Post Index: 123 )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: richs@aplcomm.jhuapl.edu (Rich Spiegel)<br />
+Subject: Re: Cache card for IIsi<br />
+In article <1r2nb4$h42@usenet.INS.CWRU.Edu>, da228@cleveland.Freenet.Edu <br />
+(Charles G. Williams) writes:<br />
+>> So is $99 a good deal or not, I still don't know.<br />
+> I would say that is not a good deal.  In June's MacWorld, River<br />
+> (formerly Maya computer) advertised a DayStar 33 MHz PowerCache WITH<br />
+> 68882 for $295!  Can you believe it?  I know prices would be falling,<br />
+> but geeze!<br />
+> <br />
+Actually, the 295 is for the 33 MHz PowerCard, not the Universal Powercache.<br />
+The 33 MHz Universal Powercache with FPU and adaptor can be had for about<br />
+$500 (still not a bad deal).  I believe the Powercard is one generation <br />
+older than the Universal Powercache, and the one primary difference is that<br />
+the Powercard is machine specific while the Powercache can fit into many<br />
+Macs with the proper adaptor.  Both cards are 68030 based.<br />
+I'm not sure if the hardware or software with the Powercard is otherwise <br />
+different from the Powercache (perhaps someone could enlighten me?).<br />
+I would also add that I called River Computer the other night and these<br />
+Powercards were going very fast.<br />
+Rich Spiegel<br />
+Mission Analysis Group<br />
+Johns Hopkins Road<br />
+Laurel, MD 20723<br />
+(301)953-5000, x7627<br />
+
+      </p></body>
+    
+      <body bgcolor="#F7F7FB">
+          <h1 style="color: red; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+             <u>Post 10 => Distance: 1.09701784403
+</u>
+          </h1>
+    
+      <h3 style="color: blue; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Original Post  ( Subject: comp.graphics )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        From: qwert@hardy.u.washington.edu (The QwertMeister)<br />
+Subject: POV/TGA<br />
+I'm having a slight problem with the POV raytracer.  I'm not sure if<br />
+this is the correct group to post to or not.  I create .tga files on<br />
+a unix machine using pov.  Then when i download them to display on my pc,<br />
+they're listed as bad files.  But when I create the file on my pc, it displays<br />
+fine.  Are unix .tga's incompatible with the pc?  An easy solution to this<br />
+problem would be a unix targa->gif converter.  Anyone know where I could<br />
+find one?  Any help on this subject is appreciated.  <br />
+- Kevin<br />
+
+      </p>
+    
+      <h3 style="color: #AA00AA; font-family: 'Liberation Sans',sans-serif; font-size: 100%;">
+        <u>Most Similar Post  ( Subject: comp.graphics , Post Index: 1530 )</u>
+      </h1>
+    
+      <p style="color: #000000; font-family: 'Times New Roman',sans-serif; font-size: 100%;">
+        Subject: GIF TO TARGA<br />
+From: david.mason@channel1.com (David Mason)<br />
+Krzysztof Muchorowski was asking about GIF-to-TGA conversion so that he<br />
+could use DTA 1.5 to convert the TGA files to FLI animation files.<br />
+Krzysztof, update your copy of DTA to a more recent release (the current<br />
+is 1.8g).  Later versions of DTA can read GIF files.<br />
+--dkm<br />
+
+      </p></body>
+    
