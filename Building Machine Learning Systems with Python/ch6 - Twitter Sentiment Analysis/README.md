@@ -14,9 +14,9 @@ For finding the best parameters for the estimator GridSearchCV has been used.
 
 The model is trained using ShuffleSplit cross-validation.
 The results are following:
-	Train Accuracy = 0.958453473132
-	Test Accuracy = 0.818902439024
-	Precision Recall Area Under Curve = 0.882747452315
+* Train Accuracy = 0.958453473132
+* Test Accuracy = 0.818902439024
+* Precision Recall Area Under Curve = 0.882747452315
 
 Contents:
 
