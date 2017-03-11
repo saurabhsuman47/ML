@@ -17,9 +17,10 @@ Contents:
 Main.py loads the data and uses it to train Linear Regression Model(available in sklearn.linear_model)
 The model is trained using KFold cross-validation.
 The results are following(without regularization):
-Train R2 score: 0.741841312823
-Test R2 score: 0.711632756616
-Root Mean Square Error: 4.67950630064
+
+* Train R2 score: 0.741841312823
+* Test R2 score: 0.711632756616
+* Root Mean Square Error: 4.67950630064
 
 For regularization Lasso(L1 penalty), Ridge(L2 penalty) has been used.(available from sklearn.linear_model)
 There is no significant improvement in R2 scores by using Lasso or Ridge(by training for different alphas). 
