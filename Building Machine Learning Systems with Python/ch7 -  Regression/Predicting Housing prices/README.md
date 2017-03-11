@@ -14,7 +14,7 @@ Contents:
 7. Lasso path(Coefficient weights vs Alpha).png - Coefficient weights vs Alpha for L1 regularization
 8. Ridge path(Coefficient weights vs Alpha).png - Coefficient weights vs Alpha for L2 regularization
 
-Main.py loads the data and uses it to train Linear Regression Model(available in sklearn.linear_model)
+Main.py loads the data and uses it to train Linear Regression Model(available in sklearn.linear_model).<br/>
 The model is trained using KFold cross-validation.
 The results are following(without regularization):
 
@@ -22,7 +22,7 @@ The results are following(without regularization):
 * Test R2 score: 0.711632756616
 * Root Mean Square Error: 4.67950630064
 
-For regularization Lasso(L1 penalty), Ridge(L2 penalty) has been used.(available from sklearn.linear_model)
+For regularization Lasso(L1 penalty), Ridge(L2 penalty) has been used(available from sklearn.linear_model).
 There is no significant improvement in R2 scores by using Lasso or Ridge(by training for different alphas). 
 
 Finally Coefficients weight vs various alphas has been visualized for both models(Lasso and Ridge).
