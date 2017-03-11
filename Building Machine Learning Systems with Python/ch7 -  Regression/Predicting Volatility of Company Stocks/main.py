@@ -34,7 +34,7 @@ print("Train R2 score = {}\nTest R2 score = {}".format(train_score, test_score))
 #Test R2 score = 0.606507736107
 
 
-#ElasticNetCV with cv and  L1_ratio (Since the inout is very sparse, L1 is preferred)
+#ElasticNetCV with cv and  L1_ratio (Since the input is very sparse, L1 is preferred)
 l1_ratio = [.5, .9, .95, 1.0]
 clf = ElasticNetCV(l1_ratio = l1_ratio)
 cv = KFold(num_samples , n_folds = 3)
