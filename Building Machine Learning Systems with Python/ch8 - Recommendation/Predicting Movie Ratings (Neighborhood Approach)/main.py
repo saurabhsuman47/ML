@@ -12,7 +12,7 @@ from sklearn.metrics import r2_score, mean_squared_error
 from load_data import load_data
 from normalize import normalizer
 
-data_path = os.path.join("ml-100k","u.data")
+data_path = os.path.join("..", "ml-100k", "u.data")
 train_reviews, test_reviews = load_data(data_path, test_percentage = 10)
 num_users, num_movies = train_reviews.shape
 
@@ -20,7 +20,7 @@ binary = train_reviews > 0
 norm = normalizer()
 train_reviews = norm.fit_transform(train_reviews)
 
-dist_between_users = distance.pdist(binary, metric = 'correlation') 
+dist_between_users = distance.pdist(train_reviews, metric = 'correlation') 
 dist_between_users = distance.squareform(dist_between_users)
 neighbors = dist_between_users.argsort(axis = 1)
 
@@ -50,7 +50,7 @@ filled = norm.inverse_transform(filled)
 
 r2 = r2_score(test_reviews[test_reviews > 0.0], filled[test_reviews > 0.0])
 rmse =  np.sqrt(mean_squared_error(test_reviews[test_reviews > 0.0], filled[test_reviews > 0.0]))
-print("Binary matrix for dist calculation, with normalization (nearest half considered) - R2 score : {} , rmse : {}".format(r2, rmse))
+print("Normalized matrix for dist calculation (nearest half considered) - R2 score : {} , rmse : {}".format(r2, rmse))
 
 #Binary matrix for dist calculation, no normalization (nearest half considered) - R2 score : 0.19078696037 , rmse : 1.01567341136
 #Binary matrix for dist calculation, with normalization (nearest half considered) - R2 score : 0.288603157857 , rmse : 0.949859444783
