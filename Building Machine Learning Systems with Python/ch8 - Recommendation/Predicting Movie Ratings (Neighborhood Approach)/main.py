@@ -31,10 +31,7 @@ for user in range(num_users):
         if binary[user][movie] == True:
             continue
         user_neighbors = neighbors[user, 1:]
-        neighbor_ratings = []
-        for neighbor in user_neighbors:
-            if binary[neighbor][movie] == True:
-                neighbor_ratings.append(train_reviews[neighbor][movie])
+        neighbor_ratings = [X[neighbor][movie] for neighbor in user_neighbors if binary[neighbor][movie]]                
         ratings_to_consider = (len(neighbor_ratings)/2 + 1)
         neighbor_ratings = neighbor_ratings[:ratings_to_consider]
         filled[user][movie] = np.mean(neighbor_ratings)

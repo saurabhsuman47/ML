@@ -33,10 +33,7 @@ class neighbor(object):
                 if binary[user][movie] == True:
                     continue
                 user_neighbors = neighbors[user, 1:]
-                neighbor_ratings = []
-                for neighbor in user_neighbors:
-                    if binary[neighbor][movie] == True:
-                        neighbor_ratings.append(X[neighbor][movie])
+                neighbor_ratings = [X[neighbor][movie] for neighbor in user_neighbors if binary[neighbor][movie]]
                 ratings_to_consider = (len(neighbor_ratings)/2 + 1)
                 neighbor_ratings = neighbor_ratings[:ratings_to_consider]
                 predicted[user][movie] = np.mean(neighbor_ratings)
@@ -62,6 +59,6 @@ if __name__ == "__main__":
     from sklearn.metrics import r2_score, mean_squared_error
     print r2_score(y[y > 0], predicted[y > 0])
     print np.sqrt(mean_squared_error(y[y > 0], predicted[y > 0]))
-#   r2 = 0.214345310048 rmse = 0.995554822399 without normalization
-#   r2 = 0.270750567348 rmse = 0.962996362106 with normalization
+#   r2 = 0.18571900871 rmse = 1.00338953915 without normalization
+#   r2 = 0.269912516825 rmse = 0.959471180624 with normalization
 
