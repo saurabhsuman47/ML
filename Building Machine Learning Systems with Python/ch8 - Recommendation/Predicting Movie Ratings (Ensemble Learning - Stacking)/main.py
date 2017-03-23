@@ -71,10 +71,10 @@ stack_test = np.array([
 predicted = clf.predict(stack_test).reshape(X.shape)
 
 r2 = r2_score(y[y > 0], predicted[y > 0])
-print r2   
+print r2   #0.345168402139
 
 rmse = np.sqrt(mean_squared_error(y[y > 0], predicted[y > 0]))
-print rmse 
+print rmse #0.905436328833
 
 
 
