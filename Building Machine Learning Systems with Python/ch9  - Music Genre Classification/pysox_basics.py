@@ -15,8 +15,8 @@ print audio
 print repr(audio)
 x = audio.get_signal()
 print repr(x)
-print x.get_signalinfo()
-print(audio.get_encoding())
+print "x.get_signalinfo() ->", x.get_signalinfo()
+print "audio.get_encoding() ->", audio.get_encoding()
 
 
 #transform input to output using Transformer()
