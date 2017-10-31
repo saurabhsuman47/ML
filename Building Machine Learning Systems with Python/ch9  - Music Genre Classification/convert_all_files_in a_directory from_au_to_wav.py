@@ -10,7 +10,7 @@ Created on Tue Oct 24 20:44:50 2017
 import sox
 import os
 
-directory = "/home/saurabh/ML/Building Machine Learning Systems with Python/ch9/genres"
+directory = "/home/saurabh/ML/Building Machine Learning Systems with Python/ch9  - Music Genre Classification/genres"
 tfm = sox.Transformer()
 
 for genre in os.listdir(directory):

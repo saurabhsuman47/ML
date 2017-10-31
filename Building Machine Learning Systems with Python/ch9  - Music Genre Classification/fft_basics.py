@@ -17,7 +17,7 @@ def generate_plot_fft(wave_filename, max_freq_plot = None):
     duration = ((X.shape[0] / sample_rate))
     N = X.shape[0] # number of samples
     T = 1.0 / sample_rate# sample spacing
-    Y = sp.fftpack.fft(X) # calculate fft
+    Y = sp.fft(X) # calculate fft
     #factor expands the x scale
     factor = 1
     if max_freq_plot is not None:
@@ -62,7 +62,7 @@ N = 600 # Number of sample points
 T = 1.0 / 800.0 # sample spacing
 x = np.linspace(0.0, N*T, N) # times at which y should be calculated
 y = np.sin(50.0 * 2.0*np.pi*x) + 0.5*np.sin(80.0 * 2.0*np.pi*x) # calculate signal
-yf = sp.fftpack.fft(y) # calculate fft
+yf = sp.fft(y) # calculate fft
 xf = np.linspace(0.0, 1.0/(2.0*T), N//2) #get x axis points =  freq for plotting
 plt.plot(xf, 2.0/N * np.abs(yf[0:N//2])) # plot x and y (number of y points should be equal to x)
 plt.grid()

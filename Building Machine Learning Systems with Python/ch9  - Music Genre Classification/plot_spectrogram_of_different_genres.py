@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 #Plot spectrogram of first 3 audios of each genres in single png
 
-directory = "/home/saurabh/ML/Building Machine Learning Systems with Python/ch9/genres"
+directory = "/home/saurabh/ML/Building Machine Learning Systems with Python/ch9  - Music Genre Classification/genres"
 i = 1
 plt.figure(figsize=(25, 14))
 
