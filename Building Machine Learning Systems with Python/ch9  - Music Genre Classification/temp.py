@@ -12,6 +12,8 @@ import numpy as np
 import scipy as sp
 import os
 import glob
+from sklearn.model_selection import train_test_split
+from sklearn import preprocessing
 
 
 ## read a file to get sample_rate and samples
@@ -44,13 +46,44 @@ def read_fft_and_load(genre_list, base_dir):
         file_list = glob.glob(path_regex)
         for _file in file_list:
             fft_features = np.load(_file)
-            X.append(fft_features[:1000])
+            X.append(fft_features[:10000])
             Y.append(genre)
 
     return np.array(X), np.array(Y)
 
+#test
 
-genre_list = ["classical", "jazz", "country", "pop", "rock", "metal"]
+
+genre_list = ["classical", "jazz", "country", "pop", "rock", "metal"] #0,2,1,4,5,3
 directory = "/home/saurabh/ML/Building Machine Learning Systems with Python/ch9  - Music Genre Classification/genres"
-X, Y = read_fft_and_load(genre_list, directory)
+X, y = read_fft_and_load(genre_list, directory)
+labelencoder = preprocessing.LabelEncoder()
+y = labelencoder.fit_transform(y)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
+#
+#from sklearn.linear_model import LogisticRegression
+#classifier = LogisticRegression()
+
+#from sklearn.neighbors import KNeighborsClassifier
+#classifier = KNeighborsClassifier(n_neighbors=5, metric='minkowski', p = 2)
+
+from sklearn.ensemble import RandomForestClassifier
+classifier = RandomForestClassifier()
+#
+#from sklearn.neural_network import MLPClassifier
+#classifier = MLPClassifier()
+
+classifier.fit(X_train, y_train)
+
+# Predicting the train and test set results
+y_train_pred = classifier.predict(X_train)
+y_pred = classifier.predict(X_test)
+
+print "train score" , classifier.score(X_train, y_train)
+print "test score" , classifier.score(X_test, y_test)
+
+
+from sklearn.metrics import confusion_matrix
+cm_train = confusion_matrix(y_train, y_train_pred)
+cm_test = confusion_matrix(y_test, y_pred)
 

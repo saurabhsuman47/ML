@@ -13,7 +13,8 @@ import os
 #function to generate and save fft in a file given input wave file
 def generate_and_save_fft(wave_file):
     sample_rate, X = sp.io.wavfile.read(wave_file)
-    Y = abs((sp.fft(X))[:1000])   # change if different number of components are desired
+    Y = abs((sp.fft(X))[:100000])   # change if different number of components are desired,
+                                    # max value for genres dataset is more than 600000
     fft_file = wave_file[:-3] + "fft"
 #    print fft_file
     np.save(fft_file, Y)
@@ -21,7 +22,8 @@ def generate_and_save_fft(wave_file):
 ##test
 #wave_filename = "/home/saurabh/Downloads/blues.00000.wav"
 #generate_and_save_fft(wave_filename)
-
+#fft_file = "/home/saurabh/Downloads/blues.00000.fft.npy"
+#fft_features = np.load(fft_file)
 
 #create fft files for all the wave files for all genres in directory, it is done for faster processing afterwards
 directory = "/home/saurabh/ML/Building Machine Learning Systems with Python/ch9  - Music Genre Classification/genres"
