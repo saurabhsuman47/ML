@@ -19,18 +19,18 @@ def generate_and_save_fft(wave_file):
 #    print fft_file
     np.save(fft_file, Y)
 
-##test
-#wave_filename = "/home/saurabh/Downloads/blues.00000.wav"
-#generate_and_save_fft(wave_filename)
-#fft_file = "/home/saurabh/Downloads/blues.00000.fft.npy"
-#fft_features = np.load(fft_file)
+#test
+wave_filename = "testing/blues.00000.wav"
+generate_and_save_fft(wave_filename)
+fft_file = "testing/blues.00000.fft.npy"
+fft_features = np.load(fft_file)
 
-#create fft files for all the wave files for all genres in directory, it is done for faster processing afterwards
-directory = "/home/saurabh/ML/Building Machine Learning Systems with Python/ch9  - Music Genre Classification/genres"
-for genre in os.listdir(directory):
-    print genre
-    subdir = os.path.join(directory, genre)
-    for filename in os.listdir(subdir):
-        if ".wav" in filename:
-            input_file = os.path.join(subdir, filename)
-            generate_and_save_fft(input_file)
+##create fft files for all the wave files for all genres in directory, it is done for faster processing afterwards
+#directory = "/home/saurabh/ML/Building Machine Learning Systems with Python/ch9  - Music Genre Classification/genres"
+#for genre in os.listdir(directory):
+#    print genre
+#    subdir = os.path.join(directory, genre)
+#    for filename in os.listdir(subdir):
+#        if ".wav" in filename:
+#            input_file = os.path.join(subdir, filename)
+#            generate_and_save_fft(input_file)

@@ -46,7 +46,7 @@ def read_fft_and_load(genre_list, base_dir):
         file_list = glob.glob(path_regex)
         for _file in file_list:
             fft_features = np.load(_file)
-            X.append(fft_features[:10000])
+            X.append(fft_features[:100000])
             Y.append(genre)
 
     return np.array(X), np.array(Y)
@@ -54,22 +54,23 @@ def read_fft_and_load(genre_list, base_dir):
 #test
 
 
-genre_list = ["classical", "jazz", "country", "pop", "rock", "metal"] #0,2,1,4,5,3
+#genre_list = ["classical", "jazz", "country", "pop", "rock", "metal"] #0,2,1,4,5,3
+genre_list = ["classical", "country", "jazz", "metal", "pop", "rock"]
 directory = "/home/saurabh/ML/Building Machine Learning Systems with Python/ch9  - Music Genre Classification/genres"
 X, y = read_fft_and_load(genre_list, directory)
 labelencoder = preprocessing.LabelEncoder()
 y = labelencoder.fit_transform(y)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
-#
-#from sklearn.linear_model import LogisticRegression
-#classifier = LogisticRegression()
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
+
+from sklearn.linear_model import LogisticRegression
+classifier = LogisticRegression() #test score 0.686666666667
 
 #from sklearn.neighbors import KNeighborsClassifier
 #classifier = KNeighborsClassifier(n_neighbors=5, metric='minkowski', p = 2)
 
-from sklearn.ensemble import RandomForestClassifier
-classifier = RandomForestClassifier()
-#
+#from sklearn.ensemble import RandomForestClassifier
+#classifier = RandomForestClassifier()
+
 #from sklearn.neural_network import MLPClassifier
 #classifier = MLPClassifier()
 
